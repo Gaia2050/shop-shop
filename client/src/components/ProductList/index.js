@@ -9,12 +9,12 @@ import spinner from '../../assets/spinner.gif';
 
 
 function ProductList() {
-  const {state, dispatch} = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
-  const {currentCategory} = state;
-
-  const {loading, data} = useQuery(QUERY_PRODUCTS);
-
+  const { currentCategory } = state;
+  
+  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  
   useEffect(() => {
     if (data) {
       dispatch({
@@ -23,14 +23,14 @@ function ProductList() {
       });
     }
   }, [data, dispatch]);
-
+  
   function filterProducts() {
     if (!currentCategory) {
       return state.products;
     }
-    return state.products.filter(product => product.category._id === currentCategory);
-  };
-
+  
+  return state.products.filter(product => product.category._id === currentCategory);
+  }
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
