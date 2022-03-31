@@ -54,7 +54,7 @@ export const reducer = (state, action) => {
                         return {
                             ...state,
                             cartOpen: newState.length > 0,
-                            care: newState
+                            cart: newState
                         };
 
                         case UPDATE_CART_QUANTITY: 
