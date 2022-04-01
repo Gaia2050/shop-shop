@@ -52,11 +52,11 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
   }
 
-  {
+  
     type Checkout {
       session: ID
     }
-  }
+  
 `;
 
 module.exports = typeDefs;
